@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Movie Archive</a> |
+        <a href="detail.html">Movie Details</a> |
+        <a href="form.html">Add Movie</a> |
+        <a href="table.html">Statistics</a>
+    </nav>
+
+    <h1>Add a New Movie</h1>
+    
+    <main>
+        <!-- The form element to collect user input -->
+        <!-- We use an ID to control this form using JavaScript later -->
+        <form id="movieForm">
+            
+            <!-- Grouping label and input for better styling -->
+            <div class="form-group">
+                <label for="movieTitle">Movie Title:</label><br>
+                <!-- Text input for the movie name. 'required' makes it mandatory -->
+                <input type="text" id="movieTitle" name="movieTitle" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="movieGenre">Genre:</label><br>
+                <!-- Dropdown menu for selecting the movie category -->
+                <select id="movieGenre" name="movieGenre" required>
+                    <option value="">Select Genre</option>
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Comedy">Comedy</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="movieRating">Rating (1 to 10):</label><br>
+                <!-- Number input restricted between 1 and 10 -->
+                <input type="number" id="movieRating" name="movieRating" min="1" max="10" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="movieNotes">Notes & Review:</label><br>
+                <!-- Textarea allows multi-line text input for reviews -->
+                <textarea id="movieNotes" name="movieNotes" rows="4" cols="30" required></textarea>
+            </div>
+            <br>
+
+            <!-- Submit button to trigger the form action -->
+            <button type="submit">Save Movie</button>
+
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
