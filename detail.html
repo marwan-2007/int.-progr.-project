@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for text support -->
+    <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main navigation bar connecting all four pages -->
+    <nav>
+        <a href="index.html">Movie Archive</a> |
+        <a href="detail.html">Movie Details</a> |
+        <a href="form.html">Add Movie</a> |
+        <a href="table.html">Statistics</a>
+    </nav>
+
+    <!-- Main heading of the detail page -->
+    <h1>Movie Details & Notes</h1>
+
+    <main>
+        <!-- Container where JavaScript will display the selected movie's details -->
+        <section id="movie-detail-box">
+            <!-- Placeholder text shown if no movie is selected yet -->
+            <p id="no-selection-msg">Please select a movie from the archive to view its details.</p>
+
+            <!-- Structured elements to hold specific movie data dynamically -->
+            <div id="detail-content" style="display: none;">
+                <h2 id="detailTitle">Movie Title</h2>
+                <p><strong>Genre:</strong> <span id="detailGenre">-</span></p>
+                <p><strong>Rating:</strong> <span id="detailRating">-</span> / 10</p>
+                
+                <div class="notes-section">
+                    <h3>Personal Notes & Review:</h3>
+                    <p id="detailNotes">-</p>
+                </div>
+            </div>
+        </section>
+
+        <br>
+
+        <!-- Action links following the required project user flow -->
+        <div class="action-buttons">
+            <a href="index.html">Back to Archive</a> | 
+            <a href="form.html">Add Another Movie</a>
+        </div>
+    </main>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

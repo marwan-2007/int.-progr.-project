@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding to support all text characters -->
+    <meta charset="UTF-8">
+    <!-- Responsive viewport settings for different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watching Statistics</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation bar connecting all four project pages -->
+    <nav>
+        <a href="index.html">Movie Archive</a> |
+        <a href="detail.html">Movie Details</a> |
+        <a href="form.html">Add Movie</a> |
+        <a href="table.html">Statistics</a>
+    </nav>
+
+    <!-- Main heading of the statistics page -->
+    <h1>Watching Statistics</h1>
+
+    <main>
+        <!-- Summary section to display calculated statistics dynamically via JS -->
+        <section id="stats-summary">
+            <p>Total Movies Watched: <span id="totalMovies">0</span></p>
+            <p>Average Rating: <span id="averageRating">0</span> / 10</p>
+        </section>
+
+        <!-- Organized table to display all saved movie data -->
+        <table id="statsTable" border="1">
+            
+            <!-- Table Header: Defines the column titles -->
+            <thead>
+                <tr>
+                    <th>Movie Title</th>
+                    <th>Genre</th>
+                    <th>Rating</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            
+            <!-- Table Body: Kept empty so JavaScript can insert rows dynamically -->
+            <tbody id="tableBody">
+                <!-- Dynamic movie rows will be added here by script.js -->
+            </tbody>
+
+        </table>
+    </main>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
