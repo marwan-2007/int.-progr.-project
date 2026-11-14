@@ -3,31 +3,53 @@
 <head>
     <!-- Character encoding for text support -->
     <meta charset="UTF-8">
-    <!-- Viewport settings for responsive design on mobile and desktop -->
+    <!-- Viewport settings for responsive design across devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Archive</title>
-    <!-- Link to external CSS file for styling -->
+    <title>Movie Archive | Watch Log</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- Main navigation menu to switch between the 4 project pages -->
-    <nav>
-        <a href="index.html">Movie Archive</a> |
-        <a href="detail.html">Movie Details</a> |
-        <a href="form.html">Add Movie</a> |
-        <a href="table.html">Statistics</a>
-    </nav>
 
-    <!-- Main heading of the page -->
-    <h1>Movie Watch Log - Archive</h1>
-    
-    <!-- Container where JavaScript will dynamically load the movie list -->
-    <main id="movie-list">
-        <!-- Dynamic content will be generated here by JS -->
+    <!-- Page Header containing navigation and main title -->
+    <header>
+        <nav>
+            <!-- 'active' class highlights the current page in CSS -->
+            <a href="index.html" class="active">Movie Archive</a>
+            <a href="detail.html">Movie Details</a>
+            <a href="form.html">Add Movie</a>
+            <a href="table.html">Statistics</a>
+        </nav>
+        <h1>Movie Watch Log - Archive</h1>
+    </header>
+
+    <main>
+        <!-- Filter & Search Controls (Ready for JavaScript DOM manipulation) -->
+        <section class="controls-bar">
+            <input type="text" id="searchInput" placeholder="Search movies by title...">
+            
+            <select id="genreFilter">
+                <option value="all">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Horror">Horror</option>
+            </select>
+        </section>
+
+        <!-- Empty container where JavaScript will dynamically inject movie cards -->
+        <section id="movie-list" class="movie-grid">
+            <!-- Dynamic movie cards will be rendered here by script.js -->
+        </section>
     </main>
 
-    <!-- Link to external JavaScript file -->
+    <!-- Page Footer -->
+    <footer>
+        <p>CEN227 Internet Programming Project &copy; 2026 - Movie Watch Log</p>
+    </footer>
+
+    <!-- External JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

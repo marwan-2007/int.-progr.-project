@@ -5,52 +5,71 @@
     <meta charset="UTF-8">
     <!-- Viewport settings for responsive design across devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Details</title>
-    <!-- Link to the external CSS file for styling -->
+    <title>Movie Details | Watch Log</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Main navigation bar connecting all four pages -->
-    <nav>
-        <a href="index.html">Movie Archive</a> |
-        <a href="detail.html">Movie Details</a> |
-        <a href="form.html">Add Movie</a> |
-        <a href="table.html">Statistics</a>
-    </nav>
-
-    <!-- Main heading of the detail page -->
-    <h1>Movie Details & Notes</h1>
+    <!-- Page Header with active navigation link -->
+    <header>
+        <nav>
+            <a href="index.html">Movie Archive</a>
+            <a href="detail.html" class="active">Movie Details</a>
+            <a href="form.html">Add Movie</a>
+            <a href="table.html">Statistics</a>
+        </nav>
+        <h1>Movie Details &amp; Notes</h1>
+    </header>
 
     <main>
-        <!-- Container where JavaScript will display the selected movie's details -->
-        <section id="movie-detail-box">
-            <!-- Placeholder text shown if no movie is selected yet -->
-            <p id="no-selection-msg">Please select a movie from the archive to view its details.</p>
+        <!-- Container where JavaScript will inject the selected movie's data -->
+        <section id="movie-detail-box" class="detail-card">
+            
+            <!-- Default message shown by JS if no movie ID is passed -->
+            <div id="empty-state" class="empty-message">
+                <p>No movie selected yet. Please choose a movie from the archive to view its details.</p>
+            </div>
 
-            <!-- Structured elements to hold specific movie data dynamically -->
-            <div id="detail-content" style="display: none;">
-                <h2 id="detailTitle">Movie Title</h2>
-                <p><strong>Genre:</strong> <span id="detailGenre">-</span></p>
-                <p><strong>Rating:</strong> <span id="detailRating">-</span> / 10</p>
-                
+            <!-- Movie details wrapper (hidden by default via CSS class until JS loads data) -->
+            <div id="detail-content" class="hidden">
+                <h2 id="detailTitle"></h2>
+
+                <!-- Metadata badges for quick info overview -->
+                <div class="detail-meta">
+                    <p><strong>Genre:</strong> <span id="detailGenre"></span></p>
+                    <p><strong>Release Year:</strong> <span id="detailYear"></span></p>
+                    <p><strong>Rating:</strong> <span id="detailRating"></span> / 10</p>
+                    <p><strong>Watched On:</strong> <span id="detailDate"></span></p>
+                </div>
+
+                <!-- Personal notes & review section -->
                 <div class="notes-section">
-                    <h3>Personal Notes & Review:</h3>
-                    <p id="detailNotes">-</p>
+                    <h3>Personal Notes &amp; Review</h3>
+                    <p id="detailNotes"></p>
+                </div>
+
+                <!-- JS-ready action button to delete the current movie -->
+                <div class="detail-controls">
+                    <button type="button" id="deleteMovieBtn" class="btn-danger">Delete Movie</button>
                 </div>
             </div>
+
         </section>
 
-        <br>
-
-        <!-- Action links following the required project user flow -->
+        <!-- Navigation links following the required project user flow -->
         <div class="action-buttons">
-            <a href="index.html">Back to Archive</a> | 
-            <a href="form.html">Add Another Movie</a>
+            <a href="index.html" class="btn-secondary">Back to Archive</a>
+            <a href="form.html" class="btn-primary">Add Another Movie</a>
         </div>
     </main>
 
-    <!-- Link to the external JavaScript file -->
+    <!-- Page Footer -->
+    <footer>
+        <p>CEN227 Internet Programming Project &copy; 2026 - Movie Watch Log</p>
+    </footer>
+
+    <!-- External JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

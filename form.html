@@ -3,65 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Movie</title>
+    <title>Add Movie | Watch Log</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="index.html">Movie Archive</a> |
-        <a href="detail.html">Movie Details</a> |
-        <a href="form.html">Add Movie</a> |
-        <a href="table.html">Statistics</a>
-    </nav>
 
-    <h1>Add a New Movie</h1>
+    <header>
+        <nav>
+            <a href="index.html">Movie Archive</a>
+            <a href="detail.html">Movie Details</a>
+            <a href="form.html" class="active">Add Movie</a>
+            <a href="table.html">Statistics</a>
+        </nav>
+        <h1>Add a New Movie</h1>
+    </header>
     
     <main>
-        <!-- The form element to collect user input -->
-        <!-- We use an ID to control this form using JavaScript later -->
-        <form id="movieForm">
+        <!-- Form element ready for JavaScript submit event & validation -->
+        <form id="movieForm" novalidate>
             
-            <!-- Grouping label and input for better styling -->
+            <!-- Movie Title Field -->
             <div class="form-group">
-                <label for="movieTitle">Movie Title:</label><br>
-                <!-- Text input for the movie name. 'required' makes it mandatory -->
-                <input type="text" id="movieTitle" name="movieTitle" required>
+                <label for="movieTitle">Movie Title:</label>
+                <input type="text" id="movieTitle" name="movieTitle" placeholder="e.g., Interstellar" required>
+                <!-- Empty small tag where JS will display validation error messages -->
+                <small class="error-msg" id="titleError"></small>
             </div>
-            <br>
 
+            <!-- Genre & Release Year Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="movieGenre">Genre:</label>
+                    <select id="movieGenre" name="movieGenre" required>
+                        <option value="">Select Genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Horror">Horror</option>
+                    </select>
+                    <small class="error-msg" id="genreError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="releaseYear">Release Year:</label>
+                    <input type="number" id="releaseYear" name="releaseYear" min="1900" max="2026" placeholder="e.g., 2014" required>
+                    <small class="error-msg" id="yearError"></small>
+                </div>
+            </div>
+
+            <!-- Rating & Watch Date Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="movieRating">Rating (1 to 10):</label>
+                    <input type="number" id="movieRating" name="movieRating" min="1" max="10" placeholder="1 - 10" required>
+                    <small class="error-msg" id="ratingError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="watchDate">Watch Date:</label>
+                    <input type="date" id="watchDate" name="watchDate" required>
+                    <small class="error-msg" id="dateError"></small>
+                </div>
+            </div>
+
+            <!-- Personal Notes Field -->
             <div class="form-group">
-                <label for="movieGenre">Genre:</label><br>
-                <!-- Dropdown menu for selecting the movie category -->
-                <select id="movieGenre" name="movieGenre" required>
-                    <option value="">Select Genre</option>
-                    <option value="Action">Action</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Comedy">Comedy</option>
-                </select>
+                <label for="movieNotes">Notes & Review:</label>
+                <textarea id="movieNotes" name="movieNotes" rows="4" placeholder="Write your thoughts about the movie..." required></textarea>
+                <small class="error-msg" id="notesError"></small>
             </div>
-            <br>
 
-            <div class="form-group">
-                <label for="movieRating">Rating (1 to 10):</label><br>
-                <!-- Number input restricted between 1 and 10 -->
-                <input type="number" id="movieRating" name="movieRating" min="1" max="10" required>
+            <!-- Submit & Reset Buttons -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Save Movie</button>
+                <button type="reset" class="btn-secondary">Clear Form</button>
             </div>
-            <br>
-
-            <div class="form-group">
-                <label for="movieNotes">Notes & Review:</label><br>
-                <!-- Textarea allows multi-line text input for reviews -->
-                <textarea id="movieNotes" name="movieNotes" rows="4" cols="30" required></textarea>
-            </div>
-            <br>
-
-            <!-- Submit button to trigger the form action -->
-            <button type="submit">Save Movie</button>
 
         </form>
     </main>
+
+    <footer>
+        <p>CEN227 Internet Programming Project &copy; 2026 - Movie Watch Log</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
